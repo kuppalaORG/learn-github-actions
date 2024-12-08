@@ -8,16 +8,19 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🍏 This job's status is ${{ job.status }}."
   qa:
+    needs: dev
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on QA."
       - run: echo "🍏 This job's status is ${{ job.status }}."
   uat:
+    needs: dev
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on uat."
       - run: echo "🍏 This job's status is ${{ job.status }}."
   prod:
+    needs: dev
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event on PROD."
